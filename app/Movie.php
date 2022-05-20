@@ -12,4 +12,8 @@ class Movie extends Model
     * @var string
     */
     protected $table = 'movies';
+
+    public function getDataUser(){
+        return date('d/m/Y', strtotime($this->date));
+    }
 }

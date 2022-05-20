@@ -12,8 +12,13 @@
     <title>Laravel Model/Controller</title>
 </head>
 <body>
-    @foreach ($movies as $movie)
-        {{ $movie->title }}
-    @endforeach
+    <div class="container">
+        <h1>Laravel Model Controller DataBase Access</h1>
+        <div class="card-container">
+            @foreach ($movies as $movie)
+                @include('partials.card', $movie)
+            @endforeach
+        </div>
+    </div>
 </body>
 </html>

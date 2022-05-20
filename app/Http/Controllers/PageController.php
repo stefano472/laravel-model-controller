@@ -9,6 +9,6 @@ class PageController extends Controller
 {
     public function index() {
         $movies = Movie::all();
-        return view('homepage', compact('movies'));
+        return view('homepage', ['movies'=>$movies]);
     }
 }
