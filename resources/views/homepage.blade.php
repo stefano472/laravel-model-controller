@@ -15,9 +15,25 @@
     <div class="container">
         <h1>Laravel Model Controller DataBase Access</h1>
         <div class="card-container">
-            @foreach ($movies as $movie)
-                @include('partials.card', $movie)
-            @endforeach
+        
+                {{-- metodo in cui posso mettere anche una condizione peò scrivo di più
+                rispetto al secondo metodo che è una shortcut  --}}
+            {{-- @if (count($movies) > 1000)
+                
+                @foreach ($movies as $movie)
+                    @include('partials.card', $movie)
+                @endforeach
+                
+            @else
+                Non ci sono Movies    
+            @endif --}}
+
+            @forelse ($movies as $movie)
+                @include('partials.card', $movie)       
+            @empty
+                Non ci sono Movies    
+            @endforelse
+            
         </div>
     </div>
 </body>
